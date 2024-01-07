@@ -20,6 +20,12 @@ class app(Frame):
         self.master.title('Calculator')
         display = StringVar()
         Entry(self, relief = RIDGE, textvariable = display, justify = 'right', bd = 30, bg = "powder blue").pack(side = TOP, expand = YES, fill = BOTH)
+    
+        for clearButton in (["C"]):
+            erase = iCalc(self, TOP)
+            for ichar in clearButton:
+                button(erase, LEFT, ichar, lambda 
+                    storeObj = display, q = ichar: storeObj.set(''))
 
 #GUI Generation
 if __name__ == '__main__':
