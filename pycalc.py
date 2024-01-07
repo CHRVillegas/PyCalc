@@ -26,7 +26,13 @@ class app(Frame):
             for ichar in clearButton:
                 button(erase, LEFT, ichar, lambda 
                     storeObj = display, q = ichar: storeObj.set(''))
-
+                
+        for numButton in ("789/", "456*", "123-", "0.+"):
+            FunctionNum = iCalc(self, TOP)
+            for iEquals in numButton:
+                button(FunctionNum, LEFT, iEquals, lambda
+                       storeObj = display, q = iEquals: storeObj
+                       .set(storeObj.get() + q))
 #GUI Generation
 if __name__ == '__main__':
     app().mainloop()
